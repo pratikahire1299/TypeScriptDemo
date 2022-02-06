@@ -1,28 +1,18 @@
-var global = 101           
+class Point{
+x:number;
+  y:number;
 
-class Demo 
-{ 
+  constructor(z?:string){
+      console.log(z);
+  }
+     draw() {
+console.log(this.x,this.y);
+    }
 
-   i = 13;                  
-   static j = 10;          
-   
-   fun():void 
-   { 
-      // Local scope
-      var local = 14;       
-      
-      console.log("Value of global : "+global);
-      console.log("Value of local : "+local);
-      console.log("Value of class variable : "+Demo.j);     // Static members can be accessed using class name
-      console.log("Value of Instance variable : "+this.i);  // Non static can be accessed using this.
-   } 
-} 
+}
 
-console.log("Global variable: "+global)  
+let objPoint=new Point("Hello");
+objPoint.x=10;
+objPoint.y=20;
+objPoint.draw();
 
-console.log(Demo.j)     //static variable  
-
-var obj = new Demo(); 
-obj.fun();
-
-console.log("Instance variable: "+obj.i);
